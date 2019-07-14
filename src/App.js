@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import fetchStoresData from './actions/companyActions';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchStoresData());
+  }
+
   render() {
     return (
       <div className="App">
