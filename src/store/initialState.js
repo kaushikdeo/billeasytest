@@ -1,3 +1,4 @@
 export default {
-  companyData: {},
+  loading: false,
+  companyData: {}
 }
