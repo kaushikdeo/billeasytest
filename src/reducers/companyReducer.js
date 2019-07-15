@@ -7,7 +7,7 @@ export default function companyReducer(state={}, action) {
       return {
         ...state,
         loading: true,
-        company: {}
+        company: null,
       };
     }
     case FETCH_STORES_DATA_SUCESS: {
