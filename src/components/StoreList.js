@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Store from './Store';
+import { Card } from 'semantic-ui-react';
 
 const StoreList = ({ allStores }) => (
-  <div>
+  <Card.Group>
     {allStores.map((store, i) => <Store key={i} store={store} />)}
-  </div>
+  </Card.Group>
 );
 
 StoreList.propTypes = {

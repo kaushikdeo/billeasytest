@@ -2,11 +2,19 @@ import React from 'react';
 import SideBar from './SideBar';
 import StoreList from './StoreList';
 import PropTypes from 'prop-types';
+import { Grid } from 'semantic-ui-react'
 
 const Dashboard = ({ company }) => (
   <div>
-    <SideBar clientData = {company.client_data} />
-    <StoreList allStores = {company.all_stores} />
+  <h1>Stores</h1>
+  <Grid>
+    <Grid.Column width={4}>
+      <SideBar clientData = {company.client_data} />
+    </Grid.Column>
+    <Grid.Column width={12}>
+      <StoreList allStores = {company.all_stores} />
+    </Grid.Column>
+  </Grid>
   </div>
 );
 
