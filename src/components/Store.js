@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Grid, Header } from 'semantic-ui-react';
+import MixedChart from './ChartDisplay';
 import PropTypes from 'prop-types';
 
 const storeCardStyles = {
@@ -31,7 +32,7 @@ const storeCardStyles = {
 };
 
 const Store = ({ store }) => (
-  <Card>
+  <Card style={storeCardStyles.storeCard}>
     <Card.Content>
       <Card.Header>
         <Header as='h3'>{store.name}</Header>
@@ -64,10 +65,10 @@ const Store = ({ store }) => (
         </Grid>
       </Card.Meta>
       <Card.Meta>
-        <span className='date'>Green Score</span>
+        <span className='date'>Reviews</span>
       </Card.Meta>
       <Card.Description>
-        dummy
+        <MixedChart overview={store.overview} />
       </Card.Description>
     </Card.Content>
   </Card>
