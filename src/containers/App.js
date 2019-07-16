@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fetchStoresData from '../actions/companyActions';
 import Dashboard from '../components/Dashboard.js';
-import './App.css';
+import Header from '../components/Header';
 
 class App extends Component {
 
@@ -30,12 +30,8 @@ class App extends Component {
   render() {
     const { loading, company } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-        </header>
+      <div>
+        <Header />
         <div>
           {
             loading ? <p>loading ... </p> :
