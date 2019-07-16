@@ -28,39 +28,55 @@ const storeCardStyles = {
     lineHeight: 'normal',
     letterSpacing: 'normal',
     color: '#464646',
-  }
+  },
+  title: {
+    color: '#29394b',
+  },
+  location:{
+    marginTop: 10,
+    color: '#5f5f5f',
+  },
+  upperMargin: {
+    marginTop: 10,
+  },
+  titleStyle: {
+    color: '#868686',
+  },
+  contentStyle: {
+    color: '#464646',
+  },
 };
 
 const Store = ({ store }) => (
   <Card style={storeCardStyles.storeCard}>
     <Card.Content>
       <Card.Header>
-        <Header as='h3'>{store.name}</Header>
+        <Header as='h3' style={storeCardStyles.title}>{store.name}</Header>
       </Card.Header>
-      <Card.Meta>
-        <span className='date'>{store.locality}</span>
+      <Card.Meta style={storeCardStyles.location}>
+        <span>{store.locality}</span>
       </Card.Meta>
-      <Card.Meta>
-        <Grid>
+      <Card.Meta textAlign='center'>
+        <Grid style={storeCardStyles.upperMargin}>
           <Grid.Column floated='left' width={7} style={storeCardStyles.gridOne}>
-            <p className='date'>COMPANY TYPE</p>
-            <span className='date'>{store.company_category}</span>
+            <p className='date' style={storeCardStyles.titleStyle}>COMPANY TYPE</p>
+            <span className='date' style={storeCardStyles.contentStyle}>{store.company_category}</span>
           </Grid.Column>
           <Grid.Column floated='right' width={7} style={storeCardStyles.gridOne}>
-            <p className='date'>ANNUAL REVENUE</p>
-            <span className='date'>{`${store.revenue_last_month/100} K`}</span>
+            <p className='date' style={storeCardStyles.titleStyle}>ANNUAL REVENUE</p>
+            <span className='date' style={storeCardStyles.contentStyle}>{`${store.revenue_last_month/100} K`}</span>
           </Grid.Column>
         </Grid>
       </Card.Meta>
-      <Card.Meta>
+      <Card.Meta textAlign='center'>
         <Grid>
           <Grid.Column floated='left' width={7} style={storeCardStyles.gridOne}>
-            <p className='date'>EMPLOYEES</p>
-            <span className='date'>20 - 50</span>
+            <p className='date' style={storeCardStyles.titleStyle}>EMPLOYEES</p>
+            <span className='date' style={storeCardStyles.contentStyle}>20 - 50</span>
           </Grid.Column>
           <Grid.Column floated='right' width={7} style={storeCardStyles.gridOne}>
-            <p className='date'>BEST SELLING</p>
-            <span className='date'>{store.best_selling_product}</span>
+            <p className='date' style={storeCardStyles.titleStyle}>BEST SELLING</p>
+            <span className='date' style={storeCardStyles.contentStyle}>{store.best_selling_product}</span>
           </Grid.Column>
         </Grid>
       </Card.Meta>
