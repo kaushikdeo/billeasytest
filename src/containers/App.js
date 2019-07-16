@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import fetchStoresData from '../actions/companyActions';
 import Dashboard from '../components/Dashboard.js';
 import Header from '../components/Header';
-import { Container } from 'semantic-ui-react';
 
 class App extends Component {
 

@@ -30,10 +30,10 @@ const Header = () => (
       <Menu.Menu position='right'>
         <Menu.Item name='Starbucks'/>
         <Menu.Item position='right'>
-          <img src='https://banner2.kisspng.com/20180131/elw/kisspng-coffee-starbucks-cafe-logo-food-starbucks-logo-png-file-5a724a65becfc8.2787887515174395897816.jpg' />
+          <img src='https://banner2.kisspng.com/20180131/elw/kisspng-coffee-starbucks-cafe-logo-food-starbucks-logo-png-file-5a724a65becfc8.2787887515174395897816.jpg' alt='store_logo' />
         </Menu.Item>
         <Menu.Item>
-          <i class="bell icon"></i>
+          <i className="bell icon"></i>
         </Menu.Item>
       </Menu.Menu>
     </Menu>

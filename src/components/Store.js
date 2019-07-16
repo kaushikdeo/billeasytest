@@ -1,24 +1,74 @@
 import React from 'react';
-import { Card, Icon, Image, Grid } from 'semantic-ui-react';
+import { Card, Grid, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+
+const storeCardStyles = {
+  storeCard: {
+    backgroundColor: '#f8f9fd',
+  },
+  gridOne: {
+    width: 83,
+    height: 90,
+    fontSize: 11,
+    fontWeight: 600,
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: -0.1,
+    color: '#868686',
+  },
+  gridOneContent: {
+    width: 106,
+    height: 15,
+    fontSize: 11,
+    fontWeight: 'bold',
+    fontStyle: 'normal',
+    fontStretch: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
+    color: '#464646',
+  }
+};
 
 const Store = ({ store }) => (
   <Card>
-    <Image src='https://banner2.kisspng.com/20180131/elw/kisspng-coffee-starbucks-cafe-logo-food-starbucks-logo-png-file-5a724a65becfc8.2787887515174395897816.jpg' wrapped ui={false} />
     <Card.Content>
-      <Card.Header>store</Card.Header>
+      <Card.Header>
+        <Header as='h3'>{store.name}</Header>
+      </Card.Header>
       <Card.Meta>
-        <span className='date'>Joined in 2015</span>
+        <span className='date'>{store.locality}</span>
+      </Card.Meta>
+      <Card.Meta>
+        <Grid>
+          <Grid.Column floated='left' width={7} style={storeCardStyles.gridOne}>
+            <p className='date'>COMPANY TYPE</p>
+            <span className='date'>{store.company_category}</span>
+          </Grid.Column>
+          <Grid.Column floated='right' width={7} style={storeCardStyles.gridOne}>
+            <p className='date'>ANNUAL REVENUE</p>
+            <span className='date'>{`${store.revenue_last_month/100} K`}</span>
+          </Grid.Column>
+        </Grid>
+      </Card.Meta>
+      <Card.Meta>
+        <Grid>
+          <Grid.Column floated='left' width={7} style={storeCardStyles.gridOne}>
+            <p className='date'>EMPLOYEES</p>
+            <span className='date'>20 - 50</span>
+          </Grid.Column>
+          <Grid.Column floated='right' width={7} style={storeCardStyles.gridOne}>
+            <p className='date'>BEST SELLING</p>
+            <span className='date'>{store.best_selling_product}</span>
+          </Grid.Column>
+        </Grid>
+      </Card.Meta>
+      <Card.Meta>
+        <span className='date'>Green Score</span>
       </Card.Meta>
       <Card.Description>
-        Matthew is a musician living in Nashville.
+        dummy
       </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
     </Card.Content>
   </Card>
 );
